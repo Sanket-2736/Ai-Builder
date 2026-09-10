@@ -36,7 +36,7 @@ export const AuthPage = ({mode}) => {
         }
     }
   return (
-    <div>
+    <div className='flex min-h-screen'>
         {/* left panel - Branding */}
         <LoginLeft/>
 
