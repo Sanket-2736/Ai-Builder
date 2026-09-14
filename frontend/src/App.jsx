@@ -1,12 +1,13 @@
 import { Layout } from 'lucide-react'
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { AuthPage } from './pages/AuthPage'
 import { AuthLayout, GuestLayout } from './pages/Layout'
 import { HomePage } from './pages/HomePage'
 import { BuilderPage } from './pages/BuilderPage'
 import { PreviewPage } from './pages/PreviewPage'
 import { Toaster } from 'react-hot-toast'
+import PublishPage from './pages/PublishPage'
 
 const App = () => {
   return (
@@ -24,6 +25,10 @@ const App = () => {
           <Route path='/builder/:id' element={<BuilderPage/>} />
           <Route path='/' element={<HomePage/>} />
         </Route>
+
+        <Route path='/publih/:id' element={<PublishPage/>}/>
+
+        <Route path='*' element={<Navigate to='/' replace />} />
       </Routes>
     </>
   )
