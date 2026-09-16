@@ -1,5 +1,5 @@
 import { FileCodeIcon, FileTextIcon, FolderOpenIcon } from 'lucide-react';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 
 function buildTree(paths) {
     const root = [];

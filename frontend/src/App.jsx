@@ -1,5 +1,3 @@
-import { Layout } from 'lucide-react'
-import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { AuthPage } from './pages/AuthPage'
 import { AuthLayout, GuestLayout } from './pages/Layout'

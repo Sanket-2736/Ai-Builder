@@ -1,10 +1,9 @@
-import React, { createContext, use, useCallback, useContext, useEffect, useState } from "react";
+import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
 import debounce from 'lodash.debounce'
 import toast from 'react-hot-toast'
 import api from '../api/api'
 const AppContext = createContext(undefined);
 import {useNavigate} from 'react-router-dom'
-import { files } from "jszip";
 
 export function AppContextProvider({children}){
     const [user, setUser] = useState(null);
@@ -116,7 +115,7 @@ export function AppContextProvider({children}){
             if(!user) return;
 
             try {
-                const {data} = await api.delete(`/api/projects/$id`);
+                await api.delete(`/api/projects/${id}`);
                 toast.success('Project deleted successfully!');
                 setProjects((prev) => prev.filter((p) => p._id !== id))
             } catch (error) {
@@ -206,8 +205,8 @@ export function AppContextProvider({children}){
     }, [debounceSave]);
 
     const updateProjectsFiles = useCallback(
-        async (params) => {
-            if(!activeProject || user) return;
+        async (files) => {
+            if(!activeProject || !user) return;
 
             debounceSave(files, activeProject._id);
         }, [activeProject, user, debounceSave]
@@ -218,6 +217,7 @@ export function AppContextProvider({children}){
         loadingUser,
         login,
         register,
+        logout,
         projects,
         loadingProjects,
         updateProjectsFiles,

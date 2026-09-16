@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { LoginLeft } from '../components/LoginLeft'
 import { EyeIcon, EyeOffIcon, Link, Loader2Icon } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const AuthPage = ({mode}) => {
 
-    const isLogin = mode === 'register';
+    const isLogin = mode === 'login';
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [passowrd, setPassword] = useState("");
@@ -76,14 +76,14 @@ export const AuthPage = ({mode}) => {
                     <div>
                         <label className="block text-[11px] font-semibold text-zinc-400 uppercase tracking-widest mb-2">Password</label>
                         <div className="relative">
-                            <input placeholder='********' type={showPassword ? "text" : "password"} name="password" value={passowrd} onChange={(e) => setPassword(e.target.value)} id="" className="w-full pl-2 py-2 border-b border-zinc-200 focusoutline-none focusborder-zinc-950 text-sm text-sinc-900 bg-transparent placeholder-zinc-300 transition-colors" />                            
+                            <input placeholder='********' type={showPassword ? "text" : "password"} name="password" value={passowrd} onChange={(e) => setPassword(e.target.value)} id="" className="w-full pl-2 py-2 border-b border-zinc-200 focus:outline-none focus:border-zinc-950 text-sm text-zinc-900 bg-transparent placeholder-zinc-300 transition-colors" />                            
                             <button onClick={() => setShowPassword(!showPassword)} className="absolute right-2 top-1/2 -translate-y-1/2 text-zinc-300 hover:text-zinc-600 flex items-center justify-center cursor-pointer transition-colors">
                                 {showPassword ? <EyeOffIcon size={14}/> : <EyeIcon size={14}/>}
                             </button>
                         </div>
                     </div>
 
-                    <button type='submit' disabled={loading} className="w-full py-2.5 bg-linear-to-br from-red-600 to-amber-600 text-white font-semibold hover:scale-102 disabled:opacity-40 flex items-center justify-center cursor-pointer mt-2 rounded-lg transition-all">
+                    <button type='submit' disabled={loading} className="w-full py-2.5 bg-gradient-to-br from-red-600 to-amber-600 text-white font-semibold hover:scale-105 disabled:opacity-40 flex items-center justify-center cursor-pointer mt-2 rounded-lg transition-all">
                         {
                             loading && <Loader2Icon className='animate-spin h-3.5 w-3.5 mr-2'/>
                         }

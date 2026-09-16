@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import moment from 'moment'
 import { useAppContext } from '../context/AppContext'
 import PromptInput from '../components/PromptInput';
@@ -62,7 +62,7 @@ export const HomePage = () => {
           </h1>
 
           <p className="text-center text-sm md:text-base max-w-xl mt-4 text-white/65 leading-relaxed">
-            Describe your idea and watch AI design, structure and launch your website isntantly. No coding required.
+            Describe your idea and watch AI design, structure and launch your website instantly. No coding required.
           </p>
 
           <div className="w-full mt-6">
@@ -110,7 +110,7 @@ export const HomePage = () => {
                     return (
                       <div 
                       key={project._id}
-                      onClick={() => navigate(`builder/${project._id}`)}
+                      onClick={() => navigate(`/builder/${project._id}`)}
                       className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between group hover:border-white/20 hover:bg-white/10 cursor-pointer backdrop-blur-sm transition-all">
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-medium truncate">

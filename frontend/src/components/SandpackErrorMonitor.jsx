@@ -1,5 +1,5 @@
 import { useSandpack } from '@codesandbox/sandpack-react'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 
 export const SandpackErrorMonitor = ({onErrorChange}) => {
     const {sandpack} = useSandpack();
@@ -18,6 +18,6 @@ export const SandpackErrorMonitor = ({onErrorChange}) => {
             onErrorChange(true);
         }
     }, [error, onErrorChange]);
-    
+
     return null;
 }

@@ -1,5 +1,4 @@
 import { ArrowUpRightSquare, XIcon } from 'lucide-react';
-import React from 'react'
 import toast from 'react-hot-toast';
 
 export const PublishModel = ({publishUrl, onClose}) => {
@@ -19,14 +18,14 @@ export const PublishModel = ({publishUrl, onClose}) => {
             </button>
 
             <div className="mb-6">
-                <h3 className="text-lg font-medium text-zinc-900 mb-1">Youor website is live!</h3>
+                <h3 className="text-lg font-medium text-zinc-900 mb-1">Your website is live!</h3>
                 <p className="text-sm text-zinc-500">Anyone with the link below can access your website.</p>
             </div>
 
             <div className="space-y-4">
                 <div>
-                    <label htmlFor="url" className="block text-[10px] font-semibold text-zinc-400 uppercase tracking-widest mb1.5">Published Link</label>
-                    <input type="text" name="url" id="url" value={publishUrl} readOnly className="w-full px-0 py-2 border-b border-zinc-200 text-sm text-zinc-900 text-sm text-zinc-900 transparent outline-none" />
+                    <label htmlFor="url" className="block text-[10px] font-semibold text-zinc-400 uppercase tracking-widest mb-1.5">Published Link</label>
+                    <input type="text" name="url" id="url" value={publishUrl} readOnly className="w-full px-0 py-2 border-b border-zinc-200 text-sm text-zinc-900 bg-transparent outline-none" />
                 </div>
 
                 <div className="flex gap-2 pt-2">
@@ -37,8 +36,8 @@ export const PublishModel = ({publishUrl, onClose}) => {
                     </button>
                     <button
                     onClick={() => window.open(publishUrl, '_blank')}
-                    className="flex-1 py-2 bg-zinc-950 text-white text-xs font-medium hover:bg-zinc-800 cursor-pointer rounded-lg text-center">
-                        View website <ArrowUpRightSquare size={14} className='text-zinc-800'/>
+                    className="flex-1 py-2 bg-zinc-950 text-white text-xs font-medium hover:bg-zinc-800 cursor-pointer rounded-lg text-center flex items-center justify-center gap-2">
+                        View website <ArrowUpRightSquare size={14} className='text-white'/>
                     </button>
                 </div>
             </div>
